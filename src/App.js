@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { Container, Title, List } from "./styles";
+
 export default function App() {
   const [repositories, setRepositories] = useState([]);
 
@@ -32,32 +34,37 @@ export default function App() {
 
   return (
     <>
-      <ul>
-        {repositories.map(repo => (
-          <li key={repo.id}>
-            {repo.name}
-            {repo.favorite ? (
-              <span
-                role="img"
-                aria-label="favorite"
-                onClick={() => handleFavorites(repo.id)}
-              >
-                {" "}
-                🌟{" "}
-              </span>
-            ) : (
-              <span
-                role="img"
-                aria-label="shining-star"
-                onClick={() => handleFavorites(repo.id)}
-              >
-                {" "}
-                ⭐{" "}
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
+      <Container>
+        <Title>My GitHub Repositories</Title>
+        <List>
+          <ul>
+            {repositories.map(repo => (
+              <li key={repo.id}>
+                <a href={repo.html_url}>{repo.name}</a>
+                {repo.favorite ? (
+                  <span
+                    role="img"
+                    aria-label="favorite"
+                    onClick={() => handleFavorites(repo.id)}
+                  >
+                    {" "}
+                    🌟{" "}
+                  </span>
+                ) : (
+                  <span
+                    role="img"
+                    aria-label="shining-star"
+                    onClick={() => handleFavorites(repo.id)}
+                  >
+                    {" "}
+                    ⭐{" "}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </List>
+      </Container>
     </>
   );
 }
