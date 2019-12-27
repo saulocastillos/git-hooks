@@ -6,7 +6,7 @@ export default function App() {
   const [repositories, setRepositories] = useState([]);
   const [user, setUser] = useState("");
   const [message, setMessage] = useState("Fill with a valid username");
-  const [avatar, setAvatar] = useState("./assets/avatar.jpg");
+  const [avatar, setAvatar] = useState("https://api.adorable.io/avatars/78/abott@adorable.png");
 
   useEffect(() => {
     async function getAvatar() {
@@ -16,7 +16,7 @@ export default function App() {
         setMessage("");
         setAvatar(data.avatar_url);
       } else {
-        setAvatar("./assets/avatar.jpg");
+        setAvatar("https://api.adorable.io/avatars/78/abott@adorable.png");
       }
     }
     getAvatar();

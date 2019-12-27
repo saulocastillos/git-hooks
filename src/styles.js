@@ -28,7 +28,6 @@ export const Container = styled.div`
 export const Title = styled.div`
   grid-column: 1 / -1;
   grid-row: 1;
-
   justify-self: center;
   align-self: center;
 
@@ -42,10 +41,9 @@ export const Title = styled.div`
 export const SearchBox = styled.div`
   grid-column: 1 / -1;
   grid-row: 2;
-  justify-self: center;
-  align-items: center
-  
   display: flex;
+  align-items: center;
+  justify-content: center;
   
 `;
 
@@ -53,6 +51,7 @@ export const Input = styled.input`
   font-weight: 600;
   width: 200px;
   height: 40px;
+  margin-right: 1rem;
 `;
 
 export const Image = styled.img`
